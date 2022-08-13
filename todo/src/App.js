@@ -10,17 +10,17 @@ function App() {
     {
       id: 1,
       title: 'задача 1',
-      status: 'false'
+      status: false
     },
     {
       id: 2,
       title: 'задача 2',
-      status: 'false'
+      status: false
     },
     {
       id: 3,
       title: 'задача 3',
-      status: 'false'
+      status: false
     },
   ])
 
@@ -28,7 +28,7 @@ function App() {
   return (
     <div className='App'>
       <Header />
-      <AddTodo />
+      <AddTodo todo={todo} setTodo={setTodo}/>
       <TodoList todo={todo} setTodo={setTodo}/>
     </div>
   );
