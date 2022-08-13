@@ -10,17 +10,17 @@ function App() {
     {
       id: 1,
       title: 'задача 1',
-      complete: 'false'
+      status: 'false'
     },
     {
       id: 2,
       title: 'задача 2',
-      complete: 'false'
+      status: 'false'
     },
     {
       id: 3,
       title: 'задача 3',
-      complete: 'false'
+      status: 'false'
     },
   ])
 
