@@ -9,18 +9,22 @@ function AddTodo({ todo,setTodo }){
 
     function saveTodo() {
 
-        let newId = [...todo][todo.length-1].id+1
+        if(value !== '') {
+            let newId = [...todo][todo.length-1].id+1
 
-        setTodo(
-            [...todo,{
-                id: newId,
-                title: value,
-                status: true
-            }]
-        )
+            setTodo(
+                [...todo,{
+                    id: newId,
+                    title: value,
+                    status: true
+                }]
+            )
         
-        //clear the input line
-        setValue('')
+            //clear the input line
+            setValue('')
+        } else {
+            alert('Запишите новую задачу в поле ввода')
+        }
     }
 
 
