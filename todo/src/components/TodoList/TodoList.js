@@ -3,7 +3,11 @@ import React from "react";
 
 function TodoList({todo, setTodo}){
 
-    
+    function deleteTodo(id){
+        let newTodo = [...todo].filter(item => item.id !== id)
+        //setTodo from useState hook in App.js
+        setTodo(newTodo)
+    }
 
     return (
         <div>
