@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import TodoList from "../TodoList/TodoList";
 
 
 function AddTodo({ todo,setTodo }){
 
     const [value, setValue] = useState('')
-
+    
 
     function saveTodo() {
 
@@ -29,9 +28,11 @@ function AddTodo({ todo,setTodo }){
 
 
     return (
-        <div>
+        <div >
             <input placeholder="Введите задачу" value={value} onChange={(e)=>setValue(e.target.value)}/>
-            <button onClick={saveTodo}>Сохранить</button>
+            <button onClick={saveTodo}>
+                Сохранить
+            </button>
         </div>
     )
 }
