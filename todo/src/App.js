@@ -1,49 +1,70 @@
 import React, { useState } from 'react';
 import './App.css';
-import AddTodo from './components/AddTodo/AddTodo';
-import TodoList from './components/TodoList/TodoList';
+import EditTodo from './components/EditTodo/EditTodo';
 import FindTodo from './components/FindTodo/FindTodo';
+import TodoTask from './components/TodoTask/TodoTask';
+import AboutTodo from './components/AboutTodo/AboutTodo';
+
 
 function App() {
+
+  const [logo, setLogo] = useState()
+
+  const [button, setButton] = useState()
+
+  const [link, setLink] = useState()
 
   const [todo, setTodo] = useState([
     {
       id: 1,
       title: 'задача 1',
-      status: true
+      status: true,
+      description: 'Покосить траву'
     },
     {
       id: 2,
       title: 'задача 2',
-      status: true
+      status: true,
+      description: 'Купить молоко'
     },
     {
       id: 3,
       title: 'задача 3',
-      status: true
+      status: true,
+      description: 'Учить прогу'
     },
   ])
 
+  console.log(link)
   return (
     <div className='container'>
       <div className='container__search'>
-        <FindTodo todo={todo} setTodo={setTodo}/>
+        <FindTodo todo={todo} setLink={setLink} setButton={setButton} setLogo={setLogo}/>
+              
       </div>
       <div className='container__blocks'>
-        <div className='wrapper-about'>
-          <h3>Привет!</h3>
-          <p>Список TO DO — это простой список дел или список задач. 
-            Запиши в него все свои важные дела, чтобы не забыть.</p>
-            <img className='wrapper-about__image' src='/images/savetime.png' alt="savetime"/>
-        </div>
-        <div className='wrapper-task'></div>
-        <div className='wrapper-edit'>
-          <AddTodo todo={todo} setTodo={setTodo}/>
-          <TodoList todo={todo} setTodo={setTodo}/>
-        </div>
+        {
+          (link === undefined && button && logo) ?
+          <AboutTodo />
+          :
+          (link !== undefined && !button && logo) ?
+          <AboutTodo />
+          :
+          (link !== undefined && button && !logo) ?
+          <EditTodo todo={todo} setTodo={setTodo} />
+          :
+          (link !== undefined && !button && !logo) ?
+          <TodoTask link={link} todo={todo}/>
+          :
+          (link === undefined && button && !logo) ?
+          <EditTodo todo={todo} setTodo={setTodo} />
+          :
+          <AboutTodo />
+        }        
       </div>
     </div>
   );
 }
 
-export default App;
+export default App
+

@@ -69,18 +69,28 @@ function TodoList({ todo, setTodo }) {
                         {
                             edit === item.id ?
                                 <div className="todo-list__button">
-                                    <button className="todo-list__button_save" onClick={() => saveTodo(item.id)}></button>
+                                    <button className="todo-list__button save" onClick={() => saveTodo(item.id)}>
+                                        <img src="/images/save.png" alt="image-save" className="todo-list__button-image"/>
+                                    </button>
                                 </div> 
                             : 
-                                <div className="todo-list__button">
+                                <div className="todo-list__buttons">
                                     {
                                         item.status ? 
-                                            <button className="todo-list__button_unlocked" onClick={() => statusTodo(item.id)}></button>
+                                            <button className="todo-list__button unlocked" onClick={() => statusTodo(item.id)}>
+                                                <img src="/images/unlocked.png" alt="image-unlocked" className="todo-list__button-image"/>
+                                            </button>
                                             :
-                                            <button className="todo-list__button_lock" onClick={() => statusTodo(item.id)}></button>
+                                            <button className="todo-list__button lock" onClick={() => statusTodo(item.id)}>
+                                                <img src="/images/lock.png" alt="image-lock" className="todo-list__button-image"/>
+                                            </button>
                                     }
-                                    <button className="todo-list__button_edit" onClick={() => editTodo(item.id,item.title)}></button>
-                                    <button className="todo-list__button_delete" onClick={() => deleteTodo(item.id)}></button>
+                                    <button className="todo-list__button edit" onClick={() => editTodo(item.id,item.title)}>
+                                        <img src="/images/edit.png" alt="image-edit" className="todo-list__button-image"/>
+                                    </button>
+                                    <button className="todo-list__button remove" onClick={() => deleteTodo(item.id)}>
+                                        <img src="/images/delete.png" alt="image-delete" className="todo-list__button-image"/>
+                                    </button>
                                 </div>
                         }         
                     </div>
