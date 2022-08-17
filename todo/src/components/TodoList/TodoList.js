@@ -1,17 +1,22 @@
 import React, { useState } from "react";
 
+
+//Вызовет блок, содержащий Todo list с возможностью редактирования
 function TodoList({ todo, setTodo }) {
 
+    //Хук для редактирования заметок
     const [edit, setEdit] = useState(null)
+
+    //Хук для сохранения изменений
     const [value, setValue] = useState('')
     
-
+    //Удаление заметки
     function deleteTodo(id) {
         let newTodo = [...todo].filter(item => item.id !== id)
-        //setTodo from useState hook in App.js
         setTodo(newTodo)
     }
 
+    //Изменение статуса заметки
     function statusTodo(id) {
         let newTodo = [...todo].filter(item => {
             if(item.id === id) {
@@ -19,15 +24,16 @@ function TodoList({ todo, setTodo }) {
             }
             return item
         })
-        //setTodo from useState hook in App.js
         setTodo(newTodo)
     }
 
+    //Редактирование заметки
     function editTodo(id, title) {
         setEdit(id)
         setValue(title)
     }
 
+    //Сохранение редактированной заметки
     function saveTodo(id) {
         let newTodo = [...todo].map(item =>{
             if(item.id === id) {
@@ -37,7 +43,7 @@ function TodoList({ todo, setTodo }) {
         })
         
         setTodo(newTodo)
-        //return to viewing mode
+        //Возврат в режим просмотра
         setEdit(null)
     }
 
@@ -70,7 +76,7 @@ function TodoList({ todo, setTodo }) {
                             edit === item.id ?
                                 <div className="todo-list__button">
                                     <button className="todo-list__button save" onClick={() => saveTodo(item.id)}>
-                                        <img src="/images/save.png" alt="image-save" className="todo-list__button-image"/>
+                                        <img src="/images/save.png" alt="save" className="todo-list__button-image"/>
                                     </button>
                                 </div> 
                             : 
@@ -78,18 +84,18 @@ function TodoList({ todo, setTodo }) {
                                     {
                                         item.status ? 
                                             <button className="todo-list__button unlocked" onClick={() => statusTodo(item.id)}>
-                                                <img src="/images/unlocked.png" alt="image-unlocked" className="todo-list__button-image"/>
+                                                <img src="/images/unlocked.png" alt="unlocked" className="todo-list__button-image"/>
                                             </button>
                                             :
                                             <button className="todo-list__button lock" onClick={() => statusTodo(item.id)}>
-                                                <img src="/images/lock.png" alt="image-lock" className="todo-list__button-image"/>
+                                                <img src="/images/lock.png" alt="lock" className="todo-list__button-image"/>
                                             </button>
                                     }
                                     <button className="todo-list__button edit" onClick={() => editTodo(item.id,item.title)}>
-                                        <img src="/images/edit.png" alt="image-edit" className="todo-list__button-image"/>
+                                        <img src="/images/edit.png" alt="edit" className="todo-list__button-image"/>
                                     </button>
                                     <button className="todo-list__button remove" onClick={() => deleteTodo(item.id)}>
-                                        <img src="/images/delete.png" alt="image-delete" className="todo-list__button-image"/>
+                                        <img src="/images/delete.png" alt="delete" className="todo-list__button-image"/>
                                     </button>
                                 </div>
                         }         

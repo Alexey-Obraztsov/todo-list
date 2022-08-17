@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 
-
+//Вызовет блок, содержащий логотип, поле для поиска по названию, списка задач
+// и кнопки для перехода на страницу редактирования
 function FindTodo({ todo, setLink, setButton, setLogo }){
 
+    //Хук для поиска по названию
     const [value, setValue] = useState('')
 
+    //Поиск по названию заметки 
     const filteredValue = todo.filter(item => item.title.toLowerCase().includes(value.toLowerCase()))
 
     function turnTaskPage(id) {

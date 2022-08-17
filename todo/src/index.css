@@ -14,10 +14,10 @@ code {
 
 .container{
   background-color: rgb(39,39,48);
-  color: aliceblue;
+  color: rgb(253, 253, 253);
   display: grid;
-  grid-template-columns: 20vw 80vw;
-  height: 100vh;
+  grid-template-columns: 20% 80%;
+  height: 100%;
   grid-template-areas:
     "aside main";
   border-radius: 5px;
@@ -45,7 +45,7 @@ code {
 }
 
 .logo__image {
-  width: 100px;
+  width: 50%;
 }
 
 .logo__button {
@@ -62,13 +62,14 @@ code {
 .todo-search__input{
   width: 15vw;
   border-radius: 5px;
-  font-size: 18px;
+  font-size: 115%;
   background-color: rgb(46,46,58);
   color: aliceblue;
 }
 
 .todo-search__container{
-  height: 80vh;
+  position: relative;
+  height: 80%;
 }
 
 .todo-search__title {
@@ -79,18 +80,21 @@ code {
 .todo-search__button_closed {
   background-color: rgb(46,46,58);
   border: none;
-  color: rgb(253, 183, 31);
-  max-width: 15vw;
-  margin-left: 5px;
-  padding: 10px 0;
+  color: rgb(173, 168, 168);
+  margin-left: 10%;
+  padding: 10px;
   font-size: medium;
   cursor: pointer;
-  transition: 0.5s;
+  transition: 0.7s;
+  width: 80%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .todo-search__button_active:hover,
 .todo-search__button_closed:hover {
-  color: rgb(115, 38, 204);
+  background-color: rgb(83, 167, 182);
+  color: aliceblue;
 }
 
 
@@ -103,31 +107,29 @@ code {
 }
 
 .edit-button {
+  width: 100%;
   height: 10vh;
-  background-color: rgb(115, 38, 204);
-  background-color: rgb(46,46,58);
-  color: rgb(253, 183, 31);
-  font-size: larger;
+  background-color: rgb(55, 143, 158);
+  color: rgb(223, 229, 235);
   cursor: pointer;
+  font-size: larger;
   transition: 0.7s;
   border: none;
 }
 
 .edit-button:hover {
-  background-color: rgb(253, 183, 31);
-  background-color: rgb(46,46,58);
-  color: rgb(115, 38, 204);
+  background-color: rgb(7, 43, 49);
 }
 
 
 /*AboutTodo*/
-
 .wrapper-about {
   width: 80vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 18px;
 }
 
 .wrapper-about__title {
@@ -141,14 +143,6 @@ code {
   background: none;
 }
 
-.wrapper-task{
-
-}
-
-.wrapper-edit{
-
-}
-
 /*TodoTask*/
 
 .wrapper-description {
@@ -157,62 +151,84 @@ code {
 }
 
 .wrapper-description__title {
+  width: 75%;
   text-align: center;
-  color:  rgb(247, 70, 70);
+  color: rgb(83, 167, 182);
+  margin: 30px auto;
+  word-wrap: break-word;
 }
 
 .wrapper-description__description {
+  width: 85%;
   text-align: justify;
-  margin: 10px 20px;
-  color: rgb(253, 183, 31);
+  margin: 0 auto;
+  color: rgb(213, 220, 226);
+  word-wrap: break-word;
 }
-
-
 
 /*AddTodo*/
 
 .add-todo {
-  color: rgb(253, 183, 31);
+  color: rgb(83, 167, 182);
   text-align: center;
   padding-top: 15px;
   margin: 0 auto;
-  width: 800px;
+  width: 75%;
   display: flex;
   flex-direction: column;
 }
 .add-todo__input {
   text-align: center;
-  font-size: larger;
+  font-size: 20px;
   background-color: rgb(46,46,58);
-  color: rgb(253, 183, 31);
+  color: rgb(213, 220, 226);
+}
+
+.add-todo__textarea {
+  margin: 20px 0;
+  text-align: center;
+  font-size: 20px;
+  background-color: rgb(46,46,58);
+  color: rgb(213, 220, 226);
 }
 
 .add-todo__button {
-  background-color: rgb(115, 38, 204);
+  height: 50px;
+  background-color: rgb(55, 143, 158);
+  color: rgb(213, 220, 226);
   font-size: larger;
-  color: rgb(253, 183, 31);
+  border: none;
+  transition: 0.7s;
+  cursor: pointer;
+}
+
+.add-todo__button:hover {
+  background-color: rgb(7, 43, 49);
 }
 
 /*TodoList*/
 
-.todo-list {
-  
-}
-
 .todo-list__container{
   margin: 0 auto;
-  width: 800px;
+  width: 75%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  color: rgb(213, 220, 226);
 }
 .todo-list__title {
+  width: 60%;
   padding-left: 6px;
   font-size: larger;
+  word-wrap: break-word;
 }
 
 .todo-list__input {
+  border-radius: 5px;
+  font-size: larger;
+  background-color: rgb(46,46,58);
+  color: aliceblue;
 }
 
 .todo-list__title_active {

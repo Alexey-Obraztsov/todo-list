@@ -1,5 +1,7 @@
 import React from "react";
 
+
+//Вызовет главную страницу
 function AboutTodo() {
     return (
         <div className='wrapper-about'>

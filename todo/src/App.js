@@ -7,14 +7,17 @@ import AboutTodo from './components/AboutTodo/AboutTodo';
 
 
 function App() {
-
+  //Хук для перехода на главную страницу
   const [logo, setLogo] = useState()
 
+  //Хук для перехода на страницу с редактированием
   const [button, setButton] = useState()
 
+  //Хук для перехода на страницу с выбранным заданием
   const [link, setLink] = useState()
 
-  const [todo, setTodo] = useState([
+  //Хук с TodoList
+  let [todo, setTodo] = useState([
     {
       id: 1,
       title: 'задача 1',
@@ -35,12 +38,10 @@ function App() {
     },
   ])
 
-  console.log(link)
   return (
     <div className='container'>
       <div className='container__search'>
-        <FindTodo todo={todo} setLink={setLink} setButton={setButton} setLogo={setLogo}/>
-              
+        <FindTodo todo={todo} setLink={setLink} setButton={setButton} setLogo={setLogo}/>            
       </div>
       <div className='container__blocks'>
         {
@@ -60,11 +61,11 @@ function App() {
           <EditTodo todo={todo} setTodo={setTodo} />
           :
           <AboutTodo />
-        }        
+        }  
       </div>
     </div>
   );
+  
 }
 
 export default App
-
